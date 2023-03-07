@@ -8,10 +8,10 @@
 import Foundation
 import CoreLocation
 
-class LocationHandler : NSObject, CLLocationManagerDelegate, ObservableObject {
+class LocationHandler : NSObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     let geocoder = CLGeocoder()
-    @Published var lastKnownLocation: String = ""
+    weak var stateController: StateController?
     
     override init() {
         super.init()
@@ -30,11 +30,13 @@ class LocationHandler : NSObject, CLLocationManagerDelegate, ObservableObject {
         if let firstLocation = locations.first {
             geocoder.reverseGeocodeLocation(firstLocation, completionHandler: {(placemarks, error) in
                 if error != nil {
-                    self.lastKnownLocation = "ERROR! location lookup from coordinates failed!"
+                    self.stateController?.lastKnownLocation = "ERROR! location lookup from coordinates failed!"
                 } else {
                     if let firstPlacement = placemarks?[0] {
                         // um so just always work and never fail getting any of these
-                        self.lastKnownLocation = "Place: \(firstPlacement.locality!) \nPOSTCODE: \(firstPlacement.postalCode!) \nCountry: \(firstPlacement.country!), \(firstPlacement.administrativeArea!) \nName: \(firstPlacement.name!) \nCoords [lat, long alt]: \(firstPlacement.location!.coordinate.latitude) \(firstPlacement.location!.coordinate.longitude) \(firstPlacement.location!.altitude)"
+                        //self.stateController?.lastKnownLocation = firstPlacement.getLocationBreakdown()
+                        self.stateController?.lastKnownLocation = firstPlacement.administrativeArea ?? "England" // Guess. We are writing the UI messages in English after all...
+                    //"Place: \(firstPlacement.locality!) \nPOSTCODE: \(firstPlacement.postalCode!) \nCountry: \(firstPlacement.country!), \(firstPlacement.administrativeArea!) \nName: \(firstPlacement.name!) \nCoords [lat, long alt]: \(firstPlacement.location!.coordinate.latitude) \(firstPlacement.location!.coordinate.longitude) \(firstPlacement.location!.altitude)"
                         //?? "ERROR! Unable to find locality!"
                     }
                 }
@@ -43,6 +45,6 @@ class LocationHandler : NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        lastKnownLocation = "ERROR! Unable to get location!"
+        self.stateController?.lastKnownLocation = "ERROR! Unable to get location!"
     }
 }

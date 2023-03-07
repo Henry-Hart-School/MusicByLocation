@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		351EB09629B7DB6700BE753F /* CLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351EB09529B7DB6700BE753F /* CLPlacemark.swift */; };
+		351EB09829B7DC4500BE753F /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351EB09729B7DC4500BE753F /* StateController.swift */; };
+		351EB09B29B7DFC700BE753F /* ArtistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351EB09A29B7DFC700BE753F /* ArtistResponse.swift */; };
+		351EB09D29B7DFDD00BE753F /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351EB09C29B7DFDD00BE753F /* Artist.swift */; };
 		354FAAAD29B116C1008D66E8 /* MusicByLocationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FAAAC29B116C1008D66E8 /* MusicByLocationApp.swift */; };
 		354FAAAF29B116C1008D66E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FAAAE29B116C1008D66E8 /* ContentView.swift */; };
 		354FAAB129B116C3008D66E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354FAAB029B116C3008D66E8 /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		351EB09529B7DB6700BE753F /* CLPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLPlacemark.swift; sourceTree = "<group>"; };
+		351EB09729B7DC4500BE753F /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		351EB09A29B7DFC700BE753F /* ArtistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResponse.swift; sourceTree = "<group>"; };
+		351EB09C29B7DFDD00BE753F /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		354FAAA929B116C1008D66E8 /* MusicByLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicByLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		354FAAAC29B116C1008D66E8 /* MusicByLocationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicByLocationApp.swift; sourceTree = "<group>"; };
 		354FAAAE29B116C1008D66E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		351EB09429B7DB4900BE753F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				351EB09529B7DB6700BE753F /* CLPlacemark.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		351EB09929B7DFB600BE753F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				351EB09A29B7DFC700BE753F /* ArtistResponse.swift */,
+				351EB09C29B7DFDD00BE753F /* Artist.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		354FAAA029B116C1008D66E8 = {
 			isa = PBXGroup;
 			children = (
@@ -96,11 +121,14 @@
 		354FAAAB29B116C1008D66E8 /* MusicByLocation */ = {
 			isa = PBXGroup;
 			children = (
+				351EB09929B7DFB600BE753F /* Model */,
+				351EB09429B7DB4900BE753F /* Extensions */,
 				354FAAAC29B116C1008D66E8 /* MusicByLocationApp.swift */,
 				354FAAAE29B116C1008D66E8 /* ContentView.swift */,
 				354FAAB029B116C3008D66E8 /* Assets.xcassets */,
 				354FAAB229B116C3008D66E8 /* Preview Content */,
 				35A3337629B1181F00B61EE2 /* LocationHandler.swift */,
+				351EB09729B7DC4500BE753F /* StateController.swift */,
 			);
 			path = MusicByLocation;
 			sourceTree = "<group>";
@@ -263,6 +291,10 @@
 				35A3337729B1181F00B61EE2 /* LocationHandler.swift in Sources */,
 				354FAAAF29B116C1008D66E8 /* ContentView.swift in Sources */,
 				354FAAAD29B116C1008D66E8 /* MusicByLocationApp.swift in Sources */,
+				351EB09629B7DB6700BE753F /* CLPlacemark.swift in Sources */,
+				351EB09829B7DC4500BE753F /* StateController.swift in Sources */,
+				351EB09B29B7DFC700BE753F /* ArtistResponse.swift in Sources */,
+				351EB09D29B7DFDD00BE753F /* Artist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
